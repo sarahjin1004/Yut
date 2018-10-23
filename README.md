@@ -5,7 +5,7 @@ The rules can be found [here](https://en.wikipedia.org/wiki/Yut).  <br />
 
 ## Project
 - You can input the player's name to display on window, as displayed below.
-![](player1.png =100x20)
+![](./player1.png =100x20)
 ![Alt text](/player1.png?raw=true "Optional Title")
 ![Alt text](/player2.png?raw=true "Optional Title")
 ![Alt text](/demo.png?raw=true "Optional Title")
