@@ -16,7 +16,7 @@ public class GUI extends JPanel {
 	private static ImageIcon image2;
 	//private static 
 	public static JFrame frame;
-	public static String player = "Black";
+	public static String player;
 	private static String player1;
 	private static String player2;
     public static void main(String[] args){
@@ -25,7 +25,7 @@ public class GUI extends JPanel {
 	player1 =  JOptionPane.showInputDialog(null,"Enter Player 1's name");
 	player2 =  JOptionPane.showInputDialog(null,"Enter Player 2's name");
 //	JOptionPane.showMessageDialog(null,message);
-	
+	player = player1;
 //	System.out.println(message);
     	frame = new JFrame("Yut");
     	
@@ -261,7 +261,7 @@ public class GUI extends JPanel {
 	g.setColor(Color.black);
     	g.setFont(new Font("Arial",Font.BOLD, 40)); 
     	g.drawString("Start", 620, 660);
-    	g.setFont(new Font("Arial",Font.PLAIN, 50)); 
+    	g.setFont(new Font("Monotype corsiva",Font.PLAIN, 50)); 
     	g.drawString(player1+":", 750, 70);
     	g.drawString(player2+":", 750, 250);
     	g.setFont(new Font("Arial",Font.PLAIN, 25)); 

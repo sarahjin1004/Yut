@@ -2,14 +2,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
-
+import javax.swing.*;
 import javax.swing.JPanel;
 
 public class Movement implements MouseListener, MouseMotionListener{
 	private int x,y;
 	
-	public Movement(ArrayList<JPanel> lst) {
-		for (JPanel panel:lst) {
+	public Movement(ArrayList<JLabel> lst) {
+		for (JLabel panel:lst) {
 			panel.addMouseListener(this);
 			panel.addMouseMotionListener(this);
 		}
