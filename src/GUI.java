@@ -127,7 +127,8 @@ public class GUI extends JPanel {
     	label2.setFont(new Font("Arial",Font.PLAIN, 25));
     	//label.setBounds(750, 580, 400, 100);
     	label2.setBounds(750, 450, 200, 100);
-    	JButton button = new JButton("Roll!");
+    	JButton button = new JButton("ROLL!");
+	button.setFont(new Font("Arial", Font.PLAIN, 40));
     	ActionListener myActionListener = new ActionListener() {
      	   public void actionPerformed(ActionEvent e) {
      		   //String output = "";
