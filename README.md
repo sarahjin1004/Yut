@@ -4,6 +4,7 @@ Traditional Korean Game to play with families and friends!
 The rules can be found [here](https://en.wikipedia.org/wiki/Yut).  <br />
 
 ## Project
+- I coded all of the program in Java.
 - You can input the player's name to display on window, as displayed below.
 ![Alt text](/player1.png?raw=true "Optional Title")
 ![Alt text](/player2.png?raw=true "Optional Title")
