@@ -17,7 +17,16 @@ public class GUI extends JPanel {
 	//private static 
 	public static JFrame frame;
 	public static String player = "Black";
+	private static String player1;
+	private static String player2;
     public static void main(String[] args){
+	//JOptionPane.showMessageDialog(null,JOptionPane.showInputDialog(null,"Enter Player 1's name."));
+	
+	player1 =  JOptionPane.showInputDialog(null,"Enter Player 1's name");
+	player2 =  JOptionPane.showInputDialog(null,"Enter Player 2's name");
+//	JOptionPane.showMessageDialog(null,message);
+	
+//	System.out.println(message);
     	frame = new JFrame("Yut");
     	
     	frame.setSize(1000,700);
@@ -41,8 +50,10 @@ public class GUI extends JPanel {
     	//lol.setBounds(350, 300, 200, 200);
     	//frame.getContentPane().add(lol);
 	JLabel start = new JLabel("Start");
+	start.setText("Start");
         start.setLocation(620,660);
-        start.setFont(new Font("Arial", Font.BOLD, 40));
+        start.setFont(new Font("Arial", Font.BOLD, 40));	
+	System.out.println("hi");
 	frame.getContentPane().add(start);
 	JLayeredPane layeredPane = new JLayeredPane();
 	for (int i = 750; i < 950; i = i + 55) {
@@ -166,21 +177,22 @@ public class GUI extends JPanel {
      		   //label.setVisible(true);
 		   label2.setText(player+" rolled:");
 		   label2.setVisible(true);
-     		   if (player == "White" && num <=3)
-     			   player = "Black";
-     		   else if (player == "Black" && num <=3)
-     			   player = "White";
+     		   if (player == player1 && num <=3)
+     			   player = player2;
+     		   else if (player == player2 && num <=3)
+     			   player = player1;
      	   }
      	};
      	//DragCircle c = new DragCircle();
     	button.setBounds(750, 380, 200, 100);
     	button.addActionListener(myActionListener);  
     	frame.getContentPane().add(button);
+	frame.getContentPane().add(layeredPane);
     	//frame.getContentPane().add(label);
 	frame.getContentPane().add(start);
     	frame.getContentPane().add(label2);
         frame.getContentPane().add(new GUI());
-	frame.getContentPane().add(layeredPane);
+//	frame.getContentPane().add(layeredPane);
         frame.setVisible(true);
 //	frame.getContentPane().add(layeredPane);
         //frame.getContentPane().add(c);
@@ -244,15 +256,17 @@ public class GUI extends JPanel {
     //	g.fillOval(27, 565, 80, 80);
     //	g.fillOval(620, 565, 80, 80);
     //	g.fillOval(620, 27, 80, 80);
-    //	g.setColor(Color.black);
-   // 	g.setFont(new Font("Arial",Font.BOLD, 40)); 
-    //	g.drawString("Start", 620, 660);
-    //	g.setFont(new Font("Arial",Font.PLAIN, 50)); 
-    //	g.drawString("Black:", 750, 70);
-    //	g.drawString("White:", 750, 250);
-    //	g.setFont(new Font("Arial",Font.PLAIN, 25)); 
-    //	g.drawString("# Pieces remaining:", 750, 100);
-    //	g.drawString("# Pieces remaining:", 750, 280);
+	Image boardimage = new ImageIcon("img/board.png").getImage();
+    	g.drawImage(boardimage, 25,25,null);
+	g.setColor(Color.black);
+    	g.setFont(new Font("Arial",Font.BOLD, 40)); 
+    	g.drawString("Start", 620, 660);
+    	g.setFont(new Font("Arial",Font.PLAIN, 50)); 
+    	g.drawString(player1+":", 750, 70);
+    	g.drawString(player2+":", 750, 250);
+    	g.setFont(new Font("Arial",Font.PLAIN, 25)); 
+    	g.drawString("# Pieces remaining:", 750, 100);
+    	g.drawString("# Pieces remaining:", 750, 280);
     //	//g.drawString(player+" rolled: ", 750, 600);
     //	//image.paintIcon(this, g, 330, 330);
     //	//g.drawImage(image, 330, 330, null);
