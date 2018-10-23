@@ -7,6 +7,7 @@ The rules can be found [here](https://en.wikipedia.org/wiki/Yut).  <br />
 - You can input the player's name to display on window, as displayed below.
 ![Alt text](/player1.png?raw=true "Optional Title")
 ![Alt text](/player2.png?raw=true "Optional Title")
+After you have entered the names, game window will open promptly.
 ![Alt text](/demo.png?raw=true "Optional Title")
 - The pieces can be dragged around, and the pieces can actually be updated with images of your choice. 
 - By pressing "Roll!" button, you can see that it displays the player and the picture of number of Yut flipped.
