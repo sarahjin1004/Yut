@@ -26,8 +26,8 @@ public class GUI extends JPanel {
     	ArrayList<JPanel> lst = new ArrayList<JPanel>();
     	//for black pieces
     	//JLabel lol = new JLabel("Hello");
-    	image1 = new ImageIcon("img/dad.png").getImage();
-    	image2 = new ImageIcon("img/mom.png").getImage();
+    	image1 = new ImageIcon("img/mom.png").getImage();
+    	image2 = new ImageIcon("img/dad.png").getImage();
     	
     	
     	
