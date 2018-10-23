@@ -14,23 +14,26 @@ public class GUI extends JPanel {
 	//public Player player;
 	private static Image image1;
 	private static Image image2;
+	//private static 
 	public static JFrame frame;
-	public static String player = "White";
+	public static String player = "Black";
     public static void main(String[] args){
     	frame = new JFrame("Yut");
     	
     	frame.setSize(1000,700);
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    	final JLabel label = new JLabel("Hello");
+    	//final JLabel label = new JLabel("Hello");
     	final JLabel label2 = new JLabel(player+" rolled:");
     	ArrayList<JPanel> lst = new ArrayList<JPanel>();
     	//for black pieces
     	//JLabel lol = new JLabel("Hello");
-    	image1 = new ImageIcon("img/mom.png").getImage();
-    	image2 = new ImageIcon("img/dad.png").getImage();
-    	
-    	
-    	
+    	image1 = new ImageIcon("img/dog.png").getImage();
+    	image2 = new ImageIcon("img/cat.png").getImage();
+    	Image yut1 = new ImageIcon("img/1.png").getImage();
+	Image yut2 = new ImageIcon("img/2.png").getImage();    	
+    	Image yut3 = new ImageIcon("img/3.png").getImage();
+	Image yut4 = new ImageIcon("img/4.png").getImage();
+	Image yut5 = new ImageIcon("img/5.png").getImage();
     	
     	//panel.setLocation(330,330);
     	//panel.setSize(100,100);
@@ -55,40 +58,99 @@ public class GUI extends JPanel {
         	frame.getContentPane().add(p);
         	lst.add(p);
     	}
-    	
+    	final ImagePanel y1 = new ImagePanel(yut1);
+	y1.setSize(200,200);
+	y1.setLocation(790,550);
+	y1.setVisible(false);
+	final ImagePanel y2 = new ImagePanel(yut2);
+        y2.setSize(200,200);
+        y2.setLocation(790,550);
+        y2.setVisible(false);
+	final ImagePanel y3 = new ImagePanel(yut3);
+        y3.setSize(200,200);
+        y3.setLocation(790,550);
+        y3.setVisible(false);
+	final ImagePanel y4 = new ImagePanel(yut4);
+        y4.setSize(200,200);
+        y4.setLocation(790,550);
+        y4.setVisible(false);
+	final ImagePanel y5 = new ImagePanel(yut5);
+        y5.setSize(200,200);
+        y5.setLocation(790,550);
+        y5.setVisible(false);
+	frame.getContentPane().add(y1);
+	frame.getContentPane().add(y2);
+	frame.getContentPane().add(y3);
+	frame.getContentPane().add(y4);
+	frame.getContentPane().add(y5);
     	Movement mv = new Movement(lst);
-    	label.setVisible(false);
+    	//label.setVisible(false);
     	label2.setVisible(false);
-    	label.setFont(new Font("Arial", Font.PLAIN, 40));
+    	//label.setFont(new Font("Arial", Font.PLAIN, 40));
     	label2.setFont(new Font("Arial",Font.PLAIN, 25));
-    	label.setBounds(750, 580, 400, 100);
-    	label2.setBounds(750, 540, 200, 100);
+    	//label.setBounds(750, 580, 400, 100);
+    	label2.setBounds(750, 450, 200, 100);
     	JButton button = new JButton("Roll!");
     	ActionListener myActionListener = new ActionListener() {
      	   public void actionPerformed(ActionEvent e) {
-     		   String output = "";
+     		   //String output = "";
      		   int num = helper();
-     		   output += Integer.toString(num)+" ";
-     		   while (num > 3) {
-     			   num = helper();
-     			   output += Integer.toString(num)+" ";
-     		   }
-     		   label.setText(output);
+		   if (num ==1){ 
+			 y2.setVisible(false);
+			y3.setVisible(false);
+			y4.setVisible(false);
+			y5.setVisible(false);
+			y1.setVisible(true);
+		   }
+		   if (num == 2) {
+			 y2.setVisible(true);
+                        y3.setVisible(false);
+                        y4.setVisible(false);
+                        y5.setVisible(false);
+                        y1.setVisible(false);
+		}
+		   if (num ==3) {
+			y2.setVisible(false);
+                        y3.setVisible(true);
+                        y4.setVisible(false);
+                        y5.setVisible(false);
+                        y1.setVisible(false);
+		}
+		   if (num == 4) {
+			y2.setVisible(false);
+                        y3.setVisible(false);
+                        y4.setVisible(true);
+                        y5.setVisible(false);
+                        y1.setVisible(false);
+		}
+		   if (num == 5) {
+			y2.setVisible(false);
+                        y3.setVisible(false);
+                        y4.setVisible(false);
+                        y5.setVisible(true);
+                        y1.setVisible(false);
+		}
+     		   //output += Integer.toString(num)+" ";
+     		   //while (num > 3) {
+     		   //	   num = helper();
+     		   //	   output += Integer.toString(num)+" ";
+     		   //}
+     		   //label.setText(output);
      		  //JOptionPane.showMessageDialog(frame.getComponent(0), Integer.toString(num));
-     		   label.setVisible(true);
-     		   if (player == "White")
+     		   //label.setVisible(true);
+		   label2.setText(player+" rolled:");
+		   label2.setVisible(true);
+     		   if (player == "White" && num <=3)
      			   player = "Black";
-     		   else
+     		   else if (player == "Black" && num <=3)
      			   player = "White";
-     		   label2.setText(player+" rolled:");
-     		   label2.setVisible(true);
      	   }
      	};
      	//DragCircle c = new DragCircle();
-    	button.setBounds(750, 450, 200, 100);
+    	button.setBounds(750, 380, 200, 100);
     	button.addActionListener(myActionListener);  
     	frame.getContentPane().add(button);
-    	frame.getContentPane().add(label);
+    	//frame.getContentPane().add(label);
     	frame.getContentPane().add(label2);
         frame.getContentPane().add(new GUI());
         frame.setVisible(true);

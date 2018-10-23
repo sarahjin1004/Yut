@@ -26,6 +26,9 @@ public class ImagePanel extends JPanel {
 	  public void paintComponent(Graphics g) {
 	    g.drawImage(img, 0, 0, null);
 	  }
-
+	  public void set(Image i){
+	    img = i;
+	    
+	  }
 	}
 
