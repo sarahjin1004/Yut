@@ -6,5 +6,6 @@ The rules can be found [here](https://en.wikipedia.org/wiki/Yut).  <br />
 ## Project
 ![Alt text](/demo.png?raw=true "Optional Title")
 - The pieces can be dragged around, and the pieces can actually be updated with images of your choice. 
-- By pressing "Roll!" button, you can see that it displays the player and the roll number.
-- Instead of Yut sticks, I have decided to implement with dice, with probabilities of rolling a certain number also accounted for.
+- By pressing "Roll!" button, you can see that it displays the player and the picture of number of Yut flipped.
+- The probabilities of rolling a certain number is also accounted for, according to the link above.
+- You can input the player's name to display on window.
